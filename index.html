@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Mimic Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="hero">
+        <h1>Emoji Mimic Website</h1>
+        <p>
+          A futuristic gesture recognition experience that uses your webcam and
+          a Teachable Machine model to detect thumbs up, thumbs down, or neutral
+          hand expressions in real time.
+        </p>
+      </section>
+
+      <div class="card grid">
+        <div class="webcam-card">
+          <div class="webcam-area" id="webcam-container">
+            <div class="loading-overlay" id="loading-text">
+              Loading model and camera controls...
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="primary" id="start-button" type="button">Start Camera</button>
+          <button class="danger" id="stop-button" type="button">Stop Camera</button>
+        </div>
+
+        <div class="status-bar">
+          <div class="status-item">
+            <strong>Prediction</strong>
+            <span id="prediction-label">--</span>
+          </div>
+          <div class="status-item">
+            <strong>Confidence</strong>
+            <span id="prediction-confidence">--</span>
+          </div>
+        </div>
+
+        <div class="emoji-display">
+          <div class="emoji-circle neutral" id="emoji-circle">
+            <span id="emoji-text">😎</span>
+          </div>
+          <div class="emoji-info">
+            <strong>Live emoji feedback</strong>
+            <span>Smile, react, and see the model respond instantly.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.19.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
